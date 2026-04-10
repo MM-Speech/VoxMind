@@ -1,0 +1,2610 @@
+[
+    {
+      "name": "checkMediaLaw",
+      "description": "Check if the given media content complies with media law regulations",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "The media content that needs to be checked for legal compliance"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Astronomy API",
+      "description": "Provides up-to-string astronomy information, including sunrise, sunset, moonrise, moonset, moon phase, and illumination.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "q": {
+            "description": "Query parameter based on which data is sent back. It could be a latitude and longitude (Decimal degree), city name, US zip, UK postcode, Canada postal code, metar code, iata code, or IP address.",
+            "type": "string"
+          },
+          "dt": {
+            "description": "Optional string parameter in YYYY-MM-DD format.",
+            "type": "string",
+            "default": ""
+          }
+        },
+        "required": [
+          "q"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Title Images",
+      "description": "Retrieve photo shots of a movie title from the online movie database.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "tconst": {
+            "description": "The ID of the movie title, in the format 'ttXXXXXXX' (e.g., 'tt0944947').",
+            "type": "string"
+          },
+          "limit": {
+            "description": "The maximum number of images to return (up to 100).",
+            "type": "int",
+            "default": 25
+          }
+        },
+        "required": [
+          "tconst"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Thai Lottery Draw Date Listing",
+      "description": "Retrieve the string listing of Thai Lottery draw results.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "page": {
+            "description": "The page number to retrieve (default: 1)",
+            "type": "int"
+          }
+        },
+        "required": [
+          "page"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "find_nearby_cafes",
+      "description": "Find nearby cafes based on user's location",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "latitude": {
+            "type": "float",
+            "description": "The latitude of the user's location"
+          },
+          "longitude": {
+            "type": "float",
+            "description": "The longitude of the user's location"
+          },
+          "radius": {
+            "type": "int",
+            "description": "The maximum distance in meters from the user's location"
+          }
+        },
+        "required": [
+          "latitude",
+          "longitude",
+          "radius"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "All Belgian Races",
+      "description": "Retrieve a list of all horse races in Belgium, including details such as race name, string, time, and location.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "string": {
+            "description": "Filter races by string (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "location": {
+            "description": "Filter races by location (e.g. Brussels, Antwerp, etc.)",
+            "type": "string"
+          },
+          "page": {
+            "description": "Page number for pagination",
+            "type": "int"
+          }
+        },
+        "required": [
+          "string",
+          "location"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Web Page Lookup",
+      "description": "Retrieve information about a web page, including its Genius ID, annotations, and other relevant details.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "raw_annotatable_url": {
+            "description": "The URL of the web page to look up",
+            "type": "string"
+          },
+          "og_url": {
+            "description": "The URL as specified by an og:url meta tag in the page's head",
+            "type": "string",
+            "default": ""
+          },
+          "canonical_url": {
+            "description": "The URL as specified by a canonical link tag in the page's head",
+            "type": "string",
+            "default": ""
+          },
+          "text_format": {
+            "description": "The format for text bodies related to the document (defaults to html)",
+            "type": "string",
+            "default": ""
+          }
+        },
+        "required": [
+          "raw_annotatable_url"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "getAstrobiologyResearch",
+      "description": "Retrieve research and information about astrobiology",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "topic": {
+            "type": "string",
+            "description": "The specific topic related to astrobiology research (e.g., extremophiles, exoplanets, origin of life)"
+          }
+        },
+        "required": []
+      },
+      "required": null
+    },
+    {
+      "name": "Top News Fetcher",
+      "description": "Fetches a list of top news articles from the Sports domain",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "locale": {
+            "description": "The locale to use for the news articles",
+            "type": "string",
+            "default": "en_INT"
+          }
+        },
+        "required": [
+          "locale"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Web Search",
+      "description": "This endpoint is used for web searches, allowing users to retrieve a list of search results based on a query and optional parameters.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "q": {
+            "description": "Search query",
+            "type": "string"
+          },
+          "lr": {
+            "description": "Restricts the search to documents written in a particular language",
+            "type": "string",
+            "default": "lang_en"
+          },
+          "gl": {
+            "description": "The gl parameter value is a two-letter country code. The gl parameter boosts search results whose country of origin matches the parameter value",
+            "type": "string",
+            "default": "US"
+          },
+          "num": {
+            "description": "Number of search results to return.",
+            "type": "int",
+            "default": 10,
+            "minimum": 1,
+            "maximum": 20
+          },
+          "start": {
+            "description": "The index of the first result to return.",
+            "type": "int",
+            "default": 0
+          }
+        },
+        "required": [
+          "q"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Keyword Search at Coordinate Point",
+      "description": "Search for keywords at a specific coordinate point on a map and return search results without rank comparison data.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "lat": {
+            "description": "Coordinate point latitude value.",
+            "type": "string"
+          },
+          "lng": {
+            "description": "Coordinate point longitude value.",
+            "type": "string"
+          },
+          "query": {
+            "description": "Search query / keyword.",
+            "type": "string"
+          },
+          "zoom": {
+            "description": "Google Maps zoom level. Allowed values: 0-18. Default: 13.",
+            "type": "string",
+            "default": "13"
+          }
+        },
+        "required": [
+          "lat",
+          "lng",
+          "query"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "/titles/{id}/main_actors",
+      "description": "Retrieves the main actors of a movie based on its IMDB ID.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "id": {
+            "description": "IMDB ID of the title (e.g., tt0000002)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Litecoin Block Hash",
+      "description": "Retrieve the hash of a Litecoin block, allowing you to get detailed information about the block.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "block_number": {
+            "description": "The block number for which you want to retrieve the hash.",
+            "type": "float"
+          }
+        },
+        "required": [
+          "block_number"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "getAllInboxes",
+      "description": "List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "sort": {
+            "description": "Optional createdAt sort direction ASC or DESC",
+            "type": "string"
+          },
+          "page": {
+            "description": "Optional page index in list pagination",
+            "type": "float"
+          },
+          "before": {
+            "description": "Optional filter by created before given string time",
+            "type": "string"
+          },
+          "domainId": {
+            "description": "Optional domain ID filter",
+            "type": "string"
+          },
+          "since": {
+            "description": "Optional filter by created after given string time",
+            "type": "string"
+          },
+          "size": {
+            "description": "Optional page size in list pagination",
+            "type": "float"
+          },
+          "tag": {
+            "description": "Optionally filter by tags. Will return inboxes that include given tags",
+            "type": "string"
+          },
+          "favourite": {
+            "description": "Optionally filter results for favourites only",
+            "type": "boolean"
+          },
+          "search": {
+            "description": "Optionally filter by search words partial matching ID, tags, name, and email address",
+            "type": "string"
+          },
+          "inboxType": {
+            "description": "Optional filter by inbox type",
+            "type": "string"
+          },
+          "teamAccess": {
+            "description": "DEPRECATED. Optionally filter by team access.",
+            "type": "boolean"
+          }
+        },
+        "required": []
+      },
+      "required": null
+    },
+    {
+      "name": "createBrand",
+      "description": "Create a new brand in the marketing platform",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "brand_name": {
+            "type": "string",
+            "description": "The name of the brand"
+          },
+          "description": {
+            "type": "string",
+            "description": "A brief description of the brand"
+          },
+          "logo": {
+            "type": "string",
+            "description": "URL of the brand's logo"
+          },
+          "website": {
+            "type": "string",
+            "description": "URL of the brand's website"
+          }
+        },
+        "required": [
+          "brand_name"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "area-code",
+      "description": "Get the International Country Calling Code and the Local Area Code information for a given country and region.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "country": {
+            "description": "ISO 2 letter country code or Name of the Country in English",
+            "type": "string"
+          },
+          "region": {
+            "description": "Geographic Region (e.g. City). No accented letter is required.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "country",
+          "region"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Basketball Player Statistics Seasons",
+      "description": "Retrieve the seasons' statistics of a basketball player.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "id": {
+            "description": "The player ID to retrieve the statistics seasons.",
+            "type": "float"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Send Voice OTP",
+      "description": "Sends an auto-generated voice OTP to an Indian phone number",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "phone_number": {
+            "description": "The 10-digit Indian phone number to send the OTP to",
+            "type": "string"
+          },
+          "api_key": {
+            "description": "The API key obtained from 2Factor.in",
+            "type": "string"
+          }
+        },
+        "required": [
+          "phone_number",
+          "api_key"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "MathDifferential.calculateEquation",
+      "description": "Solves a given differential equation using specified initial conditions and methods.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "equation": {
+            "description": "The differential equation to be solved.",
+            "type": "string"
+          },
+          "initialConditions": {
+            "description": "Initial conditions for solving the differential equation.",
+            "type": "dict",
+            "properties": {
+              "x0": {
+                "description": "The initial value of x.",
+                "type": "float"
+              },
+              "y0": {
+                "description": "The initial value of y.",
+                "type": "float"
+              }
+            },
+            "required": [
+              "x0",
+              "y0"
+            ]
+          },
+          "method": {
+            "description": "The numerical method to be used for solving the equation.",
+            "type": "string",
+            "enum": [
+              "Euler",
+              "Runge-Kutta",
+              "Adams-Bashforth"
+            ]
+          }
+        },
+        "required": [
+          "equation"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Football Player Details",
+      "description": "Retrieve detailed information about a specific football player.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "id": {
+            "description": "The unique identifier of the football player.",
+            "type": "float"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "evolutionaryAlgorithm",
+      "description": "Implement an evolutionary algorithm for problem optimization",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "problem": {
+            "type": "string",
+            "description": "The problem to be optimized (e.g., traveling salesman problem, knapsack problem)"
+          },
+          "population_size": {
+            "type": "int",
+            "description": "The size of the population in the evolutionary algorithm"
+          },
+          "mutation_rate": {
+            "type": "float",
+            "description": "The rate at which mutations occur during reproduction"
+          },
+          "max_generations": {
+            "type": "int",
+            "description": "The maximum number of generations to run the evolutionary algorithm for"
+          }
+        },
+        "required": [
+          "problem",
+          "population_size"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Horoscope Signs",
+      "description": "Returns a list of 12 horoscope sign names.",
+      "parameters": {
+        "type": "dict",
+        "properties": {},
+        "required": []
+      },
+      "required": null
+    },
+    {
+      "name": "getEmails",
+      "description": "Retrieves a list of emails received by an inbox. The API allows filtering and sorting of emails based on various parameters.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "inboxId": {
+            "description": "Id of the inbox that emails belong to",
+            "type": "string"
+          },
+          "retryTimeout": {
+            "description": "Maximum milliseconds to spend retrying the inbox database until the minimum acceptable email count is satisfied",
+            "type": "float"
+          },
+          "unreadOnly": {
+            "description": "Filter emails by unread status (default: true)",
+            "type": "boolean"
+          },
+          "sort": {
+            "description": "Sort the results by received string and direction (ASC or DESC, default: ASC)",
+            "type": "string"
+          },
+          "since": {
+            "description": "Exclude emails received before this ISO 8601 string time",
+            "type": "string"
+          },
+          "minCount": {
+            "description": "Minimum acceptable email count",
+            "type": "float"
+          },
+          "delayTimeout": {
+            "description": "Maximum milliseconds to wait for emails to arrive before retrying",
+            "type": "float"
+          },
+          "before": {
+            "description": "Exclude emails received after this ISO 8601 string time",
+            "type": "string"
+          },
+          "size": {
+            "description": "Alias for limit. Assessed first before assessing any passed limit",
+            "type": "float"
+          },
+          "limit": {
+            "description": "Limit the result set, ordered by received string time sort direction (maximum 100)",
+            "type": "float"
+          }
+        },
+        "required": [
+          "inboxId"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Check Coin Legitimacy",
+      "description": "Check the legitimacy of a cryptocurrency coin by slug and returns relevant information about the coin.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "slug": {
+            "description": "The slug of the cryptocurrency coin to be checked.",
+            "type": "string",
+            "default": "bitcoin"
+          }
+        },
+        "required": [
+          "slug"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "homogenizer.monitor_valve_performance",
+      "description": "Monitor and report the performance of homogenizer valves over a specified time period.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "time_period": {
+            "type": "dict",
+            "properties": {
+              "start_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Start date for monitoring in YYYY-MM-DD format."
+              },
+              "end_date": {
+                "type": "string",
+                "format": "date",
+                "description": "End date for monitoring in YYYY-MM-DD format."
+              }
+            },
+            "required": [
+              "start_date",
+              "end_date"
+            ]
+          },
+          "performance_metrics": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Pressure Stability",
+                "Leakage Rate",
+                "Operational Downtime"
+              ],
+              "description": "Types of performance metrics to monitor."
+            },
+            "description": "List of performance metrics to be monitored."
+          }
+        },
+        "required": [
+          "time_period"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "getDataWarehouseStatus",
+      "description": "Retrieve the current status of a data warehouse",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "warehouse_id": {
+            "type": "string",
+            "description": "The ID of the data warehouse for which you want to retrieve the status"
+          }
+        },
+        "required": [
+          "warehouse_id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "calculate_working_capital",
+      "description": "Calculate the working capital of a business given its current assets and current liabilities.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "business": {
+            "type": "dict",
+            "description": "Business for which the working capital is to be calculated.",
+            "properties": {
+              "current_assets": {
+                "type": "int",
+                "description": "The total value of all current assets of the business."
+              },
+              "current_liabilities": {
+                "type": "int",
+                "description": "The total value of all current liabilities of the business."
+              }
+            },
+            "required": [
+              "current_assets",
+              "current_liabilities"
+            ]
+          },
+          "time_period": {
+            "type": "string",
+            "description": "The time period for which the working capital is to be calculated. Can be 'monthly', 'quarterly', or 'yearly'.",
+            "enum": [
+              "monthly",
+              "quarterly",
+              "yearly"
+            ]
+          }
+        }
+      },
+      "required": null
+    },
+    {
+      "name": "Resume API",
+      "description": "A RESTful API for creating, updating, and retrieving resumes",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "profession": {
+            "description": "The profession or job role to generate a resume for",
+            "type": "string"
+          },
+          "two": {
+            "description": "Experienced and results-oriented Store Manager with three years of managerial experience in retail environments.",
+            "type": "string"
+          },
+          "six": {
+            "description": "Experienced and dedicated Art Gallery Manager with several years of experience effectively managing galleries and overseeing their day to day operations.",
+            "type": "string"
+          },
+          "ten": {
+            "description": "Experienced and professional IT Manager with over eight years of valuable experience in monitoring project performance to ensure company success.",
+            "type": "string"
+          },
+          "seven": {
+            "description": "Experienced Hair Stylist with over six years of experience cutting and styling hair.",
+            "type": "string"
+          },
+          "three": {
+            "description": "Experienced and passionate Caterer with over five years of experience in the catering industry, serving clients throughout New York, New Jersey, and Connecticut.",
+            "type": "string"
+          },
+          "eleven": {
+            "description": "Experienced and self-motivated Office Secretary with ten+ years of industry experience overseeing the main offices of schools.",
+            "type": "string"
+          },
+          "nine": {
+            "description": "Resourceful and dedicated High School Student with strong analytical skills and a serious work ethic.",
+            "type": "string"
+          },
+          "five": {
+            "description": "Experienced Nail Technician with several years of experience providing quality nails services to clients.",
+            "type": "string"
+          },
+          "four": {
+            "description": "Reliable and experienced Housekeeper with over five years of experience maintaining the cleanliness and organization of residences and offices.",
+            "type": "string"
+          },
+          "eight": {
+            "description": "Experienced and effective Operations Manager bringing forth valuable industry experience and a passion for management.",
+            "type": "string"
+          },
+          "one": {
+            "description": "An ambitious web developer focused on front-end Ul/UX, with a penchant for creating innovative solutions to unsolvable problems.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "profession"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "ThreadSafetyMonitor.stopMonitor",
+      "description": "Stops a thread safety monitor that is currently running.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "monitorId": {
+            "description": "The ID of the monitor to stop.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "monitorId"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "updateListener",
+      "description": "Listens for updates on specified database fields in real-time and triggers actions.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "dbConnection": {
+            "description": "Database connection string in the format 'username:password@host:port/database'.",
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9]+:[0-9]+\\/[a-zA-Z0-9]+$"
+          },
+          "fields": {
+            "description": "Fields to monitor for updates.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "actions": {
+            "description": "Actions to execute on update events.",
+            "type": "array",
+            "items": {
+              "type": "dict",
+              "properties": {
+                "actionType": {
+                  "description": "Type of action to perform, e.g., 'email', 'webhook'.",
+                  "type": "string"
+                },
+                "actionDetails": {
+                  "description": "Detailed configuration for the action.",
+                  "type": "dict",
+                  "properties": {
+                    "recipient": {
+                      "description": "Recipient of the action, e.g., an email address or webhook URL.",
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+                    }
+                  },
+                  "required": [
+                    "recipient"
+                  ]
+                }
+              },
+              "required": [
+                "actionType",
+                "actionDetails"
+              ]
+            }
+          }
+        },
+        "required": [
+          "dbConnection",
+          "fields",
+          "actions"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Domain DNS Lookup",
+      "description": "Performs a DNS lookup for a given domain and returns the associated DNS records.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "domain": {
+            "description": "The domain to perform the DNS lookup for.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "domain"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get User List",
+      "description": "Retrieve a list of users from the business domain",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "page": {
+            "description": "The page number for pagination",
+            "type": "int"
+          },
+          "size": {
+            "description": "The number of users to retrieve per page",
+            "type": "int"
+          },
+          "sort": {
+            "description": "The field to sort the user list by",
+            "type": "string"
+          },
+          "order": {
+            "description": "The sort order (asc or desc)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "page",
+          "size"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "GetBreadCrumbNavItem",
+      "description": "Retrieves breadcrumb navigation items for sports-related data",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "skinName": {
+            "description": "Optional skin name for customizing the breadcrumb layout",
+            "type": "string",
+            "default": "betbiga"
+          }
+        },
+        "required": []
+      },
+      "required": null
+    },
+    {
+      "name": "Simsimi Conversation API",
+      "description": "A conversational API that allows users to interact with a chatbot and receive responses",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "text": {
+            "description": "The user's query message",
+            "type": "string"
+          },
+          "lc": {
+            "description": "The language code for the conversation",
+            "type": "string"
+          },
+          "ft": {
+            "description": "A flag to indicate whether to filter out explicit content (0.0 for no, 1.0 for yes)",
+            "type": "float"
+          }
+        },
+        "required": [
+          "text",
+          "lc"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "CharacterImage",
+      "description": "Get the character image in PNG format by providing the character ID.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "characterId": {
+            "description": "The character ID for which you want to retrieve the character image.",
+            "type": "int"
+          }
+        },
+        "required": [
+          "characterId"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "QR Code Image Generation",
+      "description": "This API generates a QR code image from a given URL.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "url": {
+            "description": "The URL to generate a QR code image for.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Phone Validation API",
+      "description": "Valistrings both phone number length and the actual phone number digits, returning a boolean value indicating whether the phone number is valid or not.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "phone": {
+            "description": "The phone number to be valistringd",
+            "type": "float"
+          }
+        },
+        "required": [
+          "phone"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "cnc.turning_operation_monitor",
+      "description": "Monitor and report the status of a CNC turning operation, including tool wear and part dimensions.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "operation_id": {
+            "type": "string",
+            "description": "Identifier for the specific turning operation."
+          },
+          "check_intervals": {
+            "type": "array",
+            "description": "Scheduled times to check the operation status.",
+            "items": {
+              "type": "string",
+              "enum": [
+                "Every 30 mins",
+                "Every 1 hour",
+                "Every 2 hours"
+              ],
+              "description": "Frequency of status checks."
+            }
+          },
+          "metrics": {
+            "type": "array",
+            "description": "List of metrics to monitor during the operation.",
+            "items": {
+              "type": "dict",
+              "properties": {
+                "metric_name": {
+                  "type": "string",
+                  "enum": [
+                    "Tool Wear",
+                    "Surface Finish",
+                    "Dimensional Accuracy"
+                  ],
+                  "description": "Type of metric to monitor."
+                },
+                "threshold": {
+                  "type": "float",
+                  "description": "Threshold value that triggers an alert."
+                }
+              },
+              "required": [
+                "metric_name"
+              ]
+            }
+          }
+        },
+        "required": [
+          "operation_id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "getSampleSize",
+      "description": "Retrieve the sample size of a mixed methods research study",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "study_id": {
+            "type": "string",
+            "description": "The unique identifier of the research study"
+          }
+        },
+        "required": [
+          "study_id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "wallpaper_estimator",
+      "description": "壁纸需要量估算工具",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "room_width": {
+            "description": "房间宽度（米）",
+            "type": "float"
+          },
+          "room_length": {
+            "description": "房间长度（米）",
+            "type": "float"
+          },
+          "room_height": {
+            "description": "房间高度（米）",
+            "type": "float"
+          },
+          "door_area": {
+            "description": "门的总面积（如有）（平方米）",
+            "type": "float"
+          },
+          "window_area": {
+            "description": "窗户的总面积（如有）（平方米）",
+            "type": "float"
+          },
+          "wallpaper_width": {
+            "description": "壁纸宽度（米）",
+            "type": "float"
+          }
+        },
+        "required": [
+          "room_width",
+          "room_length",
+          "room_height",
+          "wallpaper_width"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Playlist by Category",
+      "description": "Retrieve a list of playlists from a specified category, with optional filtering by limit and offset.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "category": {
+            "description": "The category of playlists to retrieve (e.g. pop, hip-hop, rock, etc.)",
+            "type": "string"
+          },
+          "limit": {
+            "description": "The maximum number of playlists to return (max 50, default 20)",
+            "type": "int"
+          },
+          "offset": {
+            "description": "The starting point for the playlist list (default 0)",
+            "type": "int"
+          }
+        },
+        "required": [
+          "category"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "leadership.teamDynamicsEvaluation",
+      "description": "Evaluates team dynamics and provides insights on leadership styles needed for effective change management.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "teamInfo": {
+            "type": "array",
+            "items": {
+              "type": "dict",
+              "properties": {
+                "teamName": {
+                  "type": "string",
+                  "description": "Name of the team being evaluated."
+                },
+                "members": {
+                  "type": "array",
+                  "items": {
+                    "type": "dict",
+                    "properties": {
+                      "memberName": {
+                        "type": "string",
+                        "description": "Name of the team member."
+                      },
+                      "role": {
+                        "type": "string",
+                        "description": "Role of the member within the team."
+                      },
+                      "leadershipStyle": {
+                        "type": "string",
+                        "enum": [
+                          "Autocratic",
+                          "Democratic",
+                          "Laissez-Faire",
+                          "Transformational"
+                        ],
+                        "description": "Preferred leadership style of the member."
+                      }
+                    }
+                  },
+                  "description": "Details of each team member including their role and leadership style."
+                }
+              }
+            },
+            "description": "Information about teams and their members' roles and leadership styles."
+          }
+        },
+        "required": [
+          "teamInfo"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "E-Sports Game Lineups",
+      "description": "Retrieve the lineup information for a specific e-sports game.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "id": {
+            "description": "The unique identifier of the e-sports game.",
+            "type": "float"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "beauty.get_anti_aging_treatment_options",
+      "description": "Provides a list of anti-aging treatment options based on the user's skin type and preferred treatment time.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "skin_type": {
+            "type": "string",
+            "enum": [
+              "Oily",
+              "Dry",
+              "Combination",
+              "Sensitive"
+            ],
+            "description": "The user's skin type."
+          },
+          "treatment_time": {
+            "type": "string",
+            "enum": [
+              "Morning",
+              "Afternoon",
+              "Evening"
+            ],
+            "description": "Preferred time of day for treatment."
+          }
+        },
+        "required": [
+          "skin_type"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "getPatientBilling",
+      "description": "Retrieve billing information for a patient",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "description": "The unique identifier of the patient"
+          }
+        },
+        "required": [
+          "patient_id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Vulgar Word Checker",
+      "description": "Checks if a given word is considered vulgar and returns its meaning if it is.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "word": {
+            "description": "The word to be checked for vulgarity",
+            "type": "string",
+            "default": "chimpo"
+          }
+        },
+        "required": [
+          "word"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Latest Article List",
+      "description": "Retrieve a list of latest news articles from Malaysia Kini, with optional language filtering.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "language": {
+            "description": "Language to filter the article list (English (en), Malay (my), Chinese (zh))",
+            "type": "string",
+            "enum": [
+              "en",
+              "my",
+              "zh"
+            ]
+          }
+        },
+        "required": [
+          "language"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Older Messages",
+      "description": "Retrieve a list of older messages from a PubNub channel.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "callback": {
+            "description": "JSONP Callback",
+            "type": "string"
+          },
+          "limit": {
+            "description": "Limit of messages to return",
+            "type": "int"
+          },
+          "subscribe_key": {
+            "description": "Subscribe Key",
+            "type": "string"
+          },
+          "channel": {
+            "description": "Channel Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "callback",
+          "limit",
+          "subscribe_key",
+          "channel"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "JavaDebugger.startDebugSession",
+      "description": "Starts a debug session for a Java application.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "applicationPath": {
+            "description": "The path to the Java application to be debugged.",
+            "type": "string"
+          },
+          "breakpoints": {
+            "description": "A list of breakpoints to be set. Each item should be a dictionary with 'fileName' and 'lineNumber' fields.",
+            "type": "array",
+            "items": {
+              "type": "dict",
+              "properties": {
+                "fileName": {
+                  "description": "The name of the file where the breakpoint should be set.",
+                  "type": "string"
+                },
+                "lineNumber": {
+                  "description": "The line number where the breakpoint should be set.",
+                  "type": "int"
+                }
+              },
+              "required": [
+                "fileName",
+                "lineNumber"
+              ]
+            }
+          },
+          "sessionStartTime": {
+            "description": "The time when the debug session should start, in the format 'MM-DD-YYYY HH:MM'.",
+            "type": "string",
+            "pattern": "^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$"
+          }
+        },
+        "required": [
+          "applicationPath",
+          "breakpoints",
+          "sessionStartTime"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Top NFT Sales by Collection this Week",
+      "description": "Retrieve the top NFT sales data for a specific week, categorized by collections.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "start_string": {
+            "description": "The start string of the week (inclusive) in ISO 8601 format (e.g., 2023-03-06T00:00:00.000Z)",
+            "type": "string"
+          },
+          "end_string": {
+            "description": "The end string of the week (inclusive) in ISO 8601 format (e.g., 2023-03-12T00:00:00.000Z)",
+            "type": "string"
+          },
+          "limit": {
+            "description": "The maximum number of top NFT sales to return (default: 10)",
+            "type": "int"
+          }
+        },
+        "required": [
+          "start_string",
+          "end_string"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "getCuisine",
+      "description": "Retrieve cuisine information of a location",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "location": {
+            "type": "string",
+            "description": "The location for which you want to get the cuisine information (e.g., Paris, Tokyo, Mexico City)"
+          }
+        },
+        "required": [
+          "location"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Currency News API",
+      "description": "Retrieve the latest currency news and upstrings",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "currency": {
+            "description": "The currency code (e.g., USD, EUR, JPY) to filter news by",
+            "type": "string"
+          },
+          "string_range": {
+            "description": "The string range for which to retrieve news (e.g., last 24 hours, last week)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "currency"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Greatest of All Time Holiday 100 Songs",
+      "description": "Retrieve the Greatest of All Time Holiday 100 Songs chart data from Billboard's music database.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "year": {
+            "description": "The year for which to retrieve the chart data.",
+            "type": "int"
+          },
+          "page": {
+            "description": "The page number for pagination.",
+            "type": "int"
+          }
+        },
+        "required": [
+          "year"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "getThyroidFunction",
+      "description": "Retrieve current thyroid function of a patient",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "description": "The unique ID of the patient"
+          },
+          "unit": {
+            "type": "string",
+            "description": "The desired unit for thyroid function measurements (e.g., ng/dL, pmol/L)"
+          }
+        },
+        "required": [
+          "patient_id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "QR Code Image Generator",
+      "description": "This API generates a QR code image from a given URL and returns the image as a PNG attachment.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "url": {
+            "description": "The URL to generate the QR code for",
+            "type": "string"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Available Blockchains",
+      "description": "Retrieves a list of active blockchains supported by the chain49 tool.",
+      "parameters": {
+        "type": "dict",
+        "properties": {},
+        "required": []
+      },
+      "required": null
+    },
+    {
+      "name": "Get Hebrew Calendar Components",
+      "description": "Get the calendar components to build the current Hebrew month calendar from the supplied Hebrew month number, if supplied, or the first Hebrew month and a supplied year, or this year.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "month": {
+            "description": "The Hebrew month number (1-12) or leave blank for the first month of the year.",
+            "type": "int"
+          },
+          "year": {
+            "description": "The year (optional, default is this year)",
+            "type": "int"
+          }
+        },
+        "required": [
+          "month",
+          "year"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "get_song_recommendation",
+      "description": "Get a song recommendation based on user's preferences",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "genre": {
+            "type": "string",
+            "description": "The genre of the recommended song"
+          },
+          "mood": {
+            "type": "string",
+            "description": "The mood of the recommended song"
+          }
+        },
+        "required": [
+          "genre"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Token Price History by Period",
+      "description": "Retrieves the price history of a token within a specified period in USD.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "chainId": {
+            "description": "Specific network the desired coin resides on.",
+            "type": "int"
+          },
+          "address": {
+            "description": "The token address of the desired coin.",
+            "type": "string"
+          },
+          "period": {
+            "description": "Returns the chart within this time.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "chainId",
+          "address",
+          "period"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Team Receiving Data",
+      "description": "Retrieves a list of NFL teams' receiving data for a specified year and side (offense or defense).",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "side": {
+            "description": "The side of the game for which to retrieve receiving data.",
+            "type": "string",
+            "default": "offense"
+          },
+          "year": {
+            "description": "The year for which to retrieve receiving data.",
+            "type": "int",
+            "default": 2019
+          }
+        },
+        "required": [
+          "side",
+          "year"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Search News Articles",
+      "description": "Search news articles from the News Media domain",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "q": {
+            "description": "Query expression with searching keywords and setting filters",
+            "type": "string"
+          },
+          "tsi": {
+            "description": "Final time delimiter in Unix Time format in milliseconds",
+            "type": "float"
+          },
+          "ts": {
+            "description": "Initial string-time limit reference in Unix time (milliseconds)",
+            "type": "float"
+          }
+        },
+        "required": [
+          "q"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "PlayerOverallStatistics",
+      "description": "Get the overall statistics for a specific cricket player for a given tournament and season.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "id": {
+            "description": "The ID of the cricket player for which you want to retrieve the statistics.",
+            "type": "float"
+          },
+          "seasonId": {
+            "description": "The season ID for which you want to retrieve the player's overall statistics.",
+            "type": "float"
+          },
+          "tournamentId": {
+            "description": "The unique tournament ID for which you want to retrieve the player's overall statistics.",
+            "type": "float"
+          }
+        },
+        "required": [
+          "id",
+          "seasonId",
+          "tournamentId"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "styles",
+      "description": "Method that allows you to get a paged list with information about Flaticon styles, design formats that icons or packs have. Styles are the different versions in which an icon from a given family may appear. For example, an icon may be available in lineal, color, or lineal color styles.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "limit": {
+            "description": "Number of max. styles returned per request. In case it isn't requested, it will return 100 styles by default.",
+            "type": "int"
+          },
+          "page": {
+            "description": "Page about which the request is made. In case it doesn't exist, it will return page 1.",
+            "type": "int"
+          }
+        },
+        "required": [
+          "limit",
+          "page"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "health.surgery_schedule",
+      "description": "Retrieve the schedule of surgeries for a specific surgeon on a given day.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "surgeon_id": {
+            "type": "string",
+            "description": "Unique identifier for the surgeon."
+          },
+          "date": {
+            "type": "string",
+            "description": "The date for which to retrieve surgery schedules.",
+            "enum": [
+              "2023-01-01",
+              "2023-01-02",
+              "2023-01-03"
+            ]
+          },
+          "time_range": {
+            "type": "dict",
+            "properties": {
+              "start_time": {
+                "type": "string",
+                "description": "Start time of the surgery schedule in HH:MM format.",
+                "enum": [
+                  "08:00",
+                  "12:00",
+                  "16:00"
+                ]
+              },
+              "end_time": {
+                "type": "string",
+                "description": "End time of the surgery schedule in HH:MM format.",
+                "enum": [
+                  "10:00",
+                  "14:00",
+                  "18:00"
+                ]
+              }
+            },
+            "required": [
+              "start_time",
+              "end_time"
+            ]
+          }
+        },
+        "required": [
+          "surgeon_id",
+          "date"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get TV Series By Year",
+      "description": "Retrieve a list of TV series by year, including title, year, and ID.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "year": {
+            "description": "The year for which to retrieve TV series.",
+            "type": "int"
+          },
+          "page": {
+            "description": "The page number for pagination (optional).",
+            "type": "int",
+            "default": 1
+          }
+        },
+        "required": [
+          "year"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "calculateEnergyConsumption",
+      "description": "Calculates the estimated energy consumption for household appliances over a specified period.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "appliances": {
+            "type": "array",
+            "items": {
+              "type": "dict",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "description": "Type of appliance, e.g., refrigerator, heater."
+                },
+                "usageHoursPerDay": {
+                  "type": "float",
+                  "description": "Average number of hours per day the appliance is actively used."
+                },
+                "powerRating": {
+                  "type": "int",
+                  "description": "Power rating of the appliance in watts."
+                }
+              }
+            }
+          },
+          "period": {
+            "type": "string",
+            "pattern": "^\\d{1,2} [a-zA-Z]+$",
+            "description": "The period over which to calculate energy consumption, in the format 'number unit', e.g., '30 days'."
+          }
+        },
+        "required": [
+          "appliances",
+          "period"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "DocumentaryTimeline.getTimelineEvents",
+      "description": "Retrieves historical events and notable releases in the documentary genre within a specified time frame.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "timeFrame": {
+            "type": "dict",
+            "properties": {
+              "startYear": {
+                "description": "The starting year for the timeline.",
+                "type": "int",
+                "minimum": 1900,
+                "maximum": 2023
+              },
+              "endYear": {
+                "description": "The ending year for the timeline.",
+                "type": "int",
+                "minimum": 1900,
+                "maximum": 2023
+              }
+            },
+            "required": [
+              "startYear",
+              "endYear"
+            ]
+          }
+        },
+        "required": [
+          "timeFrame"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Search For A Champion",
+      "description": "Search for champions in League of Legends by various filters.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "releaseDate": {
+            "description": "Filter champions by release string.",
+            "type": "string"
+          },
+          "name": {
+            "description": "Filter champions by name.",
+            "type": "string"
+          },
+          "resource": {
+            "description": "Filter champions by resource type.",
+            "type": "string"
+          },
+          "rp": {
+            "description": "Filter champions by RP cost.",
+            "type": "string"
+          },
+          "blueEssence": {
+            "description": "Filter champions by blue essence cost.",
+            "type": "string"
+          },
+          "attribute": {
+            "description": "Filter champions by attribute (e.g., marksmen, fighters, etc.).",
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "required": null
+    },
+    {
+      "name": "Get Total Goals by Tournament",
+      "description": "Retrieve total goals statistics of teams in a tournament, ordered by tournament standings.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "tournamentId": {
+            "description": "The ID of the tournament.",
+            "type": "float"
+          }
+        },
+        "required": [
+          "tournamentId"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Currency Information",
+      "description": "This API returns detailed information about a specific cryptocurrency, including its name, features, supported wallets, and more.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "ticker": {
+            "description": "Currency ticker (required)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "GameInventoryManager.updateInventory",
+      "description": "Updates the inventory of board games by adding new games or updating existing ones.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "updates": {
+            "type": "array",
+            "items": {
+              "type": "dict",
+              "properties": {
+                "gameId": {
+                  "description": "The unique identifier for a game.",
+                  "type": "int"
+                },
+                "quantity": {
+                  "description": "The number of units to add or subtract from the inventory.",
+                  "type": "int"
+                },
+                "timestamp": {
+                  "description": "The timestamp when the update was made, formatted as HH:MM.",
+                  "type": "string",
+                  "pattern": "^\\d{2}:\\d{2}$"
+                }
+              },
+              "required": [
+                "gameId",
+                "quantity",
+                "timestamp"
+              ]
+            }
+          }
+        },
+        "required": [
+          "updates"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Media info by Media Id",
+      "description": "Retrieves information about a specific post (photo, video, IGTV, reel, etc.) given its ID.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "mediaid": {
+            "description": "The ID of the post to retrieve information about.",
+            "type": "float"
+          }
+        },
+        "required": [
+          "mediaid"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Latest Odds",
+      "description": "Retrieve the latest odds for Dafabet sportsbook",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "sport": {
+            "description": "The sport to retrieve odds for (e.g. football, basketball, etc.)",
+            "type": "string"
+          },
+          "event": {
+            "description": "The event to retrieve odds for (e.g. match name, tournament name, etc.)",
+            "type": "string"
+          },
+          "market": {
+            "description": "The market to retrieve odds for (e.g. win, over/under, etc.)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "sport",
+          "event",
+          "market"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Param1",
+      "description": "Param1 API for test_v4 tool in the Other domain",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "Param": {
+            "description": "The input parameter for the API",
+            "type": "string"
+          }
+        },
+        "required": [
+          "Param"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "GET Clients Per Access Point",
+      "description": "Retrieve a list of clients connected to each Access Point (AP) in the network.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "ap_id": {
+            "description": "The ID of the Access Point to retrieve clients for.",
+            "type": "string"
+          },
+          "start_time": {
+            "description": "The start time of the time range to retrieve clients for (optional).",
+            "type": "int"
+          },
+          "end_time": {
+            "description": "The end time of the time range to retrieve clients for (optional).",
+            "type": "int"
+          }
+        },
+        "required": [
+          "ap_id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "getSparkJobLogs",
+      "description": "Retrieve logs of a completed Spark job",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "description": "The ID of the Spark job"
+          },
+          "limit": {
+            "type": "int",
+            "description": "The maximum number of log entries to retrieve"
+          }
+        },
+        "required": [
+          "job_id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "/forex/intraday",
+      "description": "Returns intraday time series data for a given currency pair, including string, open, high, low, close, and volume, within a specified time interval.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "interval": {
+            "description": "The time interval for the intraday data, e.g., 1-minute, 5-minute, etc.",
+            "type": "int"
+          },
+          "symbol": {
+            "description": "The symbol of the currency pair, e.g., EUR/USD, EUR-USD, EURUSD, etc.",
+            "type": "string"
+          },
+          "from": {
+            "description": "The start string and time for the intraday data, in YYYY-mm-dd HH:MM format or YYYY-mm-dd format.",
+            "type": "string"
+          },
+          "to": {
+            "description": "The end string and time for the intraday data, in YYYY-mm-dd HH:MM format or YYYY-mm-dd format.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "interval",
+          "symbol",
+          "from",
+          "to"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Weekly Most Viewed YouTube Music Videos",
+      "description": "Retrieve the most viewed YouTube music videos for a specific week.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "start_string": {
+            "description": "The start string of the week (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "end_string": {
+            "description": "The end string of the week (YYYY-MM-DD)",
+            "type": "string"
+          },
+          "limit": {
+            "description": "The maximum number of results to return (default: 10)",
+            "type": "int"
+          }
+        },
+        "required": [
+          "start_string",
+          "end_string"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Hashtag Categories",
+      "description": "Retrieve a list of categories related to a specific hashtag.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "hashtag": {
+            "description": "The name of the hashtag to retrieve categories for.",
+            "type": "string"
+          },
+          "limit": {
+            "description": "The maximum number of categories to return.",
+            "type": "int",
+            "default": 10
+          },
+          "offset": {
+            "description": "The starting point for pagination.",
+            "type": "int",
+            "default": 0
+          }
+        },
+        "required": [
+          "hashtag"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Country Flag API",
+      "description": "Retrieve the flag image of a country by its ID.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "countryId": {
+            "description": "The unique identifier of the country.",
+            "type": "int"
+          }
+        },
+        "required": [
+          "countryId"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Line Score - Real Time",
+      "description": "This endpoint provides the basic \"line score\" for a game, whether completed earlier this season, or currently happening now, in real time. A baseball line score consists of the basic R/H/E, plus the scores by inning and any pitching scoring decisions.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "gameID": {
+            "description": "The unique identifier for the game",
+            "type": "string",
+            "default": "20230410_CHW@MIN"
+          }
+        },
+        "required": [
+          "gameID"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Twitter Space Stream URL API",
+      "description": "This API receives the m3u8 URL for a Twitter Space stream by providing the mediaId.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "mediaId": {
+            "description": "The mediaId obtained from the Twitter Space details and media_key value.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mediaId"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "simulatePlasmaDischarge",
+      "description": "Simulate a plasma discharge",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "discharge_power": {
+            "type": "float",
+            "description": "The power of the plasma discharge in watts"
+          }
+        },
+        "required": [
+          "discharge_power"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "getMentalHealthAssessment",
+      "description": "Retrieve mental health assessment results",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "patient_id": {
+            "type": "string",
+            "description": "The ID of the patient for whom you want to retrieve mental health assessment results"
+          }
+        },
+        "required": [
+          "patient_id"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "fitness.workoutPlanner",
+      "description": "Generates a personalized workout plan based on user's fitness goals and available equipment.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "userPreferences": {
+            "type": "dict",
+            "properties": {
+              "goal": {
+                "type": "string",
+                "enum": [
+                  "weight_loss",
+                  "muscle_gain",
+                  "endurance_increase"
+                ],
+                "description": "The fitness goal of the user."
+              },
+              "equipment": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "dumbbells",
+                    "treadmill",
+                    "none"
+                  ],
+                  "description": "List of available equipment. Choose 'none' if no equipment is available."
+                },
+                "description": "Array of equipment available for the workout."
+              }
+            },
+            "required": [
+              "goal",
+              "equipment"
+            ]
+          }
+        }
+      },
+      "required": null
+    },
+    {
+      "name": "Get Injured MLB Players",
+      "description": "Retrieve a list of MLB players who are currently injured.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "season": {
+            "description": "The season for which to retrieve injured players (e.g., 2022)",
+            "type": "int"
+          },
+          "team": {
+            "description": "The team to filter injured players by (e.g., 'New York Yankees')",
+            "type": "string"
+          }
+        },
+        "required": [
+          "season"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "play_music_track",
+      "description": "Plays a specific music track by artist and title.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "song_title": {
+            "description": "The title of the song.",
+            "type": "string"
+          },
+          "artist_name": {
+            "description": "The name of the artist.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "song_title",
+          "artist_name"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "education.stemWorkshops",
+      "description": "Fetches a list of available STEM workshops for a specified date and grade level.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "The date for which to find STEM workshops. Format should be 'YYYY-MM-DD'."
+          },
+          "grade_level": {
+            "type": "string",
+            "description": "The educational grade level. Valid options are 'Elementary', 'Middle School', 'High School'."
+          },
+          "focus_area": {
+            "type": "string",
+            "description": "Optional focus area of the STEM workshop. Examples include 'Robotics', 'Computer Science', 'Biology'."
+          }
+        },
+        "required": [
+          "date",
+          "grade_level"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "create_new_note",
+      "description": "Create a new note",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "The title of the note"
+          },
+          "content": {
+            "type": "string",
+            "description": "The content of the note"
+          }
+        },
+        "required": [
+          "title",
+          "content"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "forum.post_analysis",
+      "description": "Analyzes the content and engagement of posts within a forum.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "forum_name": {
+            "type": "string",
+            "description": "The name of the forum for which to analyze posts."
+          },
+          "time_frame": {
+            "type": "string",
+            "enum": [
+              "last_24_hours",
+              "last_week",
+              "last_month"
+            ],
+            "description": "Time frame for the post analysis."
+          }
+        },
+        "required": [
+          "forum_name",
+          "time_frame"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Text Styler API",
+      "description": "This API is used to style and format text using various fonts, colors, and effects.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "text": {
+            "description": "The text to be styled and formatted",
+            "type": "string"
+          }
+        },
+        "required": [
+          "text"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "YTD Historical Daily Prices",
+      "description": "Retrieves the year-to-string historical daily prices for a specified stock, including Open, High, Low, and Close prices, as well as daily Volume, Dividend, and Split information.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "ticker": {
+            "description": "The stock ticker symbol",
+            "type": "string"
+          }
+        },
+        "required": [
+          "ticker"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get New York Lottery Draw Results",
+      "description": "Retrieve draw results for all games offered by the New York Lottery.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "game": {
+            "description": "The name of the lottery game (e.g., Powerball, Mega Millions, etc.)",
+            "type": "string"
+          },
+          "string_range": {
+            "description": "The string range for which to retrieve draw results (e.g., '2020-01-01' to '2020-01-31')",
+            "type": "string"
+          }
+        },
+        "required": [
+          "game"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "GetCompetitions",
+      "description": "Retrieve a list of football competitions that are televised in Spain. This endpoint does not require any parameters.",
+      "parameters": {
+        "type": "dict",
+        "properties": {},
+        "required": []
+      },
+      "required": null
+    },
+    {
+      "name": "Get Live Games List",
+      "description": "Retrieve a list of live games in the Gaming domain.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "game_type": {
+            "description": "Filter games by type (e.g., MMORPG, FPS, etc.)",
+            "type": "string"
+          },
+          "platform": {
+            "description": "Filter games by platform (e.g., PC, Console, Mobile, etc.)",
+            "type": "string"
+          },
+          "sort_by": {
+            "description": "Sort games by (e.g., popularity, release string, etc.)",
+            "type": "string"
+          }
+        },
+        "required": [
+          "game_type"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "Get Market Summary",
+      "description": "Retrieve a summary of the current market situation, including key statistics and trends.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "symbol": {
+            "description": "The stock symbol or market index to retrieve the summary for.",
+            "type": "string"
+          },
+          "timeframe": {
+            "description": "The time period for which to retrieve the summary (e.g., '1d', '1w', '1m').",
+            "type": "string"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "LegalRequirementUpdater.updateRequirements",
+      "description": "Updates the legal requirements for a specific business operation, ensuring compliance with recent laws.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "operationID": {
+            "description": "Identifier for the business operation.",
+            "type": "string"
+          },
+          "newRequirements": {
+            "description": "List of new legal requirements to be applied.",
+            "type": "array",
+            "items": {
+              "type": "dict",
+              "properties": {
+                "lawCode": {
+                  "description": "Code of the law that introduces the requirement.",
+                  "type": "string"
+                },
+                "requirementDetails": {
+                  "description": "Detailed description of the requirement.",
+                  "type": "string"
+                },
+                "effectiveDate": {
+                  "description": "The date when the requirement becomes effective, format should be '%b %d, '%y'.",
+                  "type": "string",
+                  "pattern": "^[a-zA-Z]{3} \\d{2}, '\\d{2}$"
+                }
+              },
+              "required": [
+                "lawCode",
+                "requirementDetails",
+                "effectiveDate"
+              ]
+            }
+          }
+        },
+        "required": [
+          "operationID",
+          "newRequirements"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "SkinCareRoutineOptimizer.optimizeRoutine",
+      "description": "Optimizes a skincare routine based on the user's skin type, current products, and environmental factors.",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "skinType": {
+            "description": "The user's skin type, e.g., 'oily', 'dry', 'combination', 'normal'.",
+            "type": "string"
+          },
+          "currentProducts": {
+            "description": "List of current skincare products being used by the user, including product name and usage frequency.",
+            "type": "array",
+            "items": {
+              "type": "dict",
+              "properties": {
+                "productName": {
+                  "description": "Name of the skincare product.",
+                  "type": "string"
+                },
+                "usageFrequency": {
+                  "description": "How often the product is used, e.g., 'daily', 'twice a week'.",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "environmentalFactors": {
+            "description": "Environmental factors that might affect skin condition, such as 'humidity', 'pollution level', 'UV index'.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "skinType",
+          "currentProducts"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "peer_deposit_interest_rate_comparison_2",
+      "description": "对比同业存款的年化利率",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "bankNames": {
+            "description": "要对比的银行名称，可以输入多个银行名称，用逗号分隔。",
+            "type": "string"
+          },
+          "deposit_type": {
+            "description": "存款类型",
+            "type": "string",
+            "enum": [
+              "活期",
+              "定期"
+            ]
+          },
+          "date": {
+            "description": "查询日期，格式为YYYY-MM-DD，用户查询月份，对应传入日期应为当月最后一天。",
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        },
+        "required": [
+          "bankNames",
+          "deposit_type",
+          "date"
+        ]
+      },
+      "required": null
+    },
+    {
+      "name": "GET Highlights",
+      "description": "Retrieve the highlight list of an Instagram prostring",
+      "parameters": {
+        "type": "dict",
+        "properties": {
+          "username": {
+            "description": "The username of the Instagram prostring",
+            "type": "string"
+          }
+        },
+        "required": [
+          "username"
+        ]
+      },
+      "required": null
+    }
+  ]

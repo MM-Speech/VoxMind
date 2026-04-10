@@ -1,0 +1,392 @@
+[
+    {
+        "name": "checkMediaLaw",
+        "description": "Check if the given media content complies with media law regulations",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "The media content that needs to be checked for legal compliance"
+                }
+            },
+            "required": [
+                "content"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "Astronomy API",
+        "description": "Provides up-to-string astronomy information, including sunrise, sunset, moonrise, moonset, moon phase, and illumination.",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "q": {
+                    "description": "Query parameter based on which data is sent back. It could be a latitude and longitude (Decimal degree), city name, US zip, UK postcode, Canada postal code, metar code, iata code, or IP address.",
+                    "type": "string"
+                },
+                "dt": {
+                    "description": "Optional string parameter in YYYY-MM-DD format.",
+                    "type": "string",
+                    "default": ""
+                }
+            },
+            "required": [
+                "q"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "Get Title Images",
+        "description": "Retrieve photo shots of a movie title from the online movie database.",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "tconst": {
+                    "description": "The ID of the movie title, in the format 'ttXXXXXXX' (e.g., 'tt0944947').",
+                    "type": "string"
+                },
+                "limit": {
+                    "description": "The maximum number of images to return (up to 100).",
+                    "type": "int",
+                    "default": 25
+                }
+            },
+            "required": [
+                "tconst"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "Thai Lottery Draw Date Listing",
+        "description": "Retrieve the string listing of Thai Lottery draw results.",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "page": {
+                    "description": "The page number to retrieve (default: 1)",
+                    "type": "int"
+                }
+            },
+            "required": [
+                "page"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "find_nearby_cafes",
+        "description": "Find nearby cafes based on user's location",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "latitude": {
+                    "type": "float",
+                    "description": "The latitude of the user's location"
+                },
+                "longitude": {
+                    "type": "float",
+                    "description": "The longitude of the user's location"
+                },
+                "radius": {
+                    "type": "int",
+                    "description": "The maximum distance in meters from the user's location"
+                }
+            },
+            "required": [
+                "latitude",
+                "longitude",
+                "radius"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "All Belgian Races",
+        "description": "Retrieve a list of all horse races in Belgium, including details such as race name, string, time, and location.",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "string": {
+                    "description": "Filter races by string (YYYY-MM-DD)",
+                    "type": "string"
+                },
+                "location": {
+                    "description": "Filter races by location (e.g. Brussels, Antwerp, etc.)",
+                    "type": "string"
+                },
+                "page": {
+                    "description": "Page number for pagination",
+                    "type": "int"
+                }
+            },
+            "required": [
+                "string",
+                "location"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "Web Page Lookup",
+        "description": "Retrieve information about a web page, including its Genius ID, annotations, and other relevant details.",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "raw_annotatable_url": {
+                    "description": "The URL of the web page to look up",
+                    "type": "string"
+                },
+                "og_url": {
+                    "description": "The URL as specified by an og:url meta tag in the page's head",
+                    "type": "string",
+                    "default": ""
+                },
+                "canonical_url": {
+                    "description": "The URL as specified by a canonical link tag in the page's head",
+                    "type": "string",
+                    "default": ""
+                },
+                "text_format": {
+                    "description": "The format for text bodies related to the document (defaults to html)",
+                    "type": "string",
+                    "default": ""
+                }
+            },
+            "required": [
+                "raw_annotatable_url"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "getAstrobiologyResearch",
+        "description": "Retrieve research and information about astrobiology",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "topic": {
+                    "type": "string",
+                    "description": "The specific topic related to astrobiology research (e.g., extremophiles, exoplanets, origin of life)"
+                }
+            },
+            "required": []
+        },
+        "required": null
+    },
+    {
+        "name": "Top News Fetcher",
+        "description": "Fetches a list of top news articles from the Sports domain",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "locale": {
+                    "description": "The locale to use for the news articles",
+                    "type": "string",
+                    "default": "en_INT"
+                }
+            },
+            "required": [
+                "locale"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "MathDifferential.calculateEquation",
+        "description": "Solves a given differential equation using specified initial conditions and methods.",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "equation": {
+                    "description": "The differential equation to be solved.",
+                    "type": "string"
+                },
+                "initialConditions": {
+                    "description": "Initial conditions for solving the differential equation.",
+                    "type": "dict",
+                    "properties": {
+                        "x0": {
+                            "description": "The initial value of x.",
+                            "type": "float"
+                        },
+                        "y0": {
+                            "description": "The initial value of y.",
+                            "type": "float"
+                        }
+                    },
+                    "required": [
+                        "x0",
+                        "y0"
+                    ]
+                },
+                "method": {
+                    "description": "The numerical method to be used for solving the equation.",
+                    "type": "string",
+                    "enum": [
+                        "Euler",
+                        "Runge-Kutta",
+                        "Adams-Bashforth"
+                    ]
+                }
+            },
+            "required": [
+                "equation"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "Keyword Search at Coordinate Point",
+        "description": "Search for keywords at a specific coordinate point on a map and return search results without rank comparison data.",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "lat": {
+                    "description": "Coordinate point latitude value.",
+                    "type": "string"
+                },
+                "lng": {
+                    "description": "Coordinate point longitude value.",
+                    "type": "string"
+                },
+                "query": {
+                    "description": "Search query / keyword.",
+                    "type": "string"
+                },
+                "zoom": {
+                    "description": "Google Maps zoom level. Allowed values: 0-18. Default: 13.",
+                    "type": "string",
+                    "default": "13"
+                }
+            },
+            "required": [
+                "lat",
+                "lng",
+                "query"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "/titles/{id}/main_actors",
+        "description": "Retrieves the main actors of a movie based on its IMDB ID.",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "id": {
+                    "description": "IMDB ID of the title (e.g., tt0000002)",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "Get Litecoin Block Hash",
+        "description": "Retrieve the hash of a Litecoin block, allowing you to get detailed information about the block.",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "block_number": {
+                    "description": "The block number for which you want to retrieve the hash.",
+                    "type": "float"
+                }
+            },
+            "required": [
+                "block_number"
+            ]
+        },
+        "required": null
+    },
+    {
+        "name": "getAllInboxes",
+        "description": "List inboxes in paginated form. The results are available on the `content` property of the returned object. This method allows for page index (zero based), page size (how many results to return), and a sort direction (based on createdAt time). You Can also filter by whether an inbox is favorited or use email address pattern. This method is the recommended way to query inboxes. The alternative `getInboxes` method returns a full list of inboxes but is limited to 100 results.",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "sort": {
+                    "description": "Optional createdAt sort direction ASC or DESC",
+                    "type": "string"
+                },
+                "page": {
+                    "description": "Optional page index in list pagination",
+                    "type": "float"
+                },
+                "before": {
+                    "description": "Optional filter by created before given string time",
+                    "type": "string"
+                },
+                "domainId": {
+                    "description": "Optional domain ID filter",
+                    "type": "string"
+                },
+                "since": {
+                    "description": "Optional filter by created after given string time",
+                    "type": "string"
+                },
+                "size": {
+                    "description": "Optional page size in list pagination",
+                    "type": "float"
+                },
+                "tag": {
+                    "description": "Optionally filter by tags. Will return inboxes that include given tags",
+                    "type": "string"
+                },
+                "favourite": {
+                    "description": "Optionally filter results for favourites only",
+                    "type": "boolean"
+                },
+                "search": {
+                    "description": "Optionally filter by search words partial matching ID, tags, name, and email address",
+                    "type": "string"
+                },
+                "inboxType": {
+                    "description": "Optional filter by inbox type",
+                    "type": "string"
+                },
+                "teamAccess": {
+                    "description": "DEPRECATED. Optionally filter by team access.",
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "required": null
+    },
+    {
+        "name": "createBrand",
+        "description": "Create a new brand in the marketing platform",
+        "parameters": {
+            "type": "dict",
+            "properties": {
+                "brand_name": {
+                    "type": "string",
+                    "description": "The name of the brand"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "A brief description of the brand"
+                },
+                "logo": {
+                    "type": "string",
+                    "description": "URL of the brand's logo"
+                },
+                "website": {
+                    "type": "string",
+                    "description": "URL of the brand's website"
+                }
+            },
+            "required": [
+                "brand_name"
+            ]
+        },
+        "required": null
+    }
+]

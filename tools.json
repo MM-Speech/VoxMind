@@ -1,0 +1,73 @@
+[
+  {
+    "name": "Get Weather",
+    "description": "Look up the current weather for a city. Use this tool when the user asks about today's conditions, temperature, or simple weather-based advice such as whether they should bring a jacket or umbrella. The tool returns the city name, temperature unit, current condition, and a short suggestion.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string",
+          "description": "Name of the city to check, for example Beijing or Shanghai."
+        }
+      },
+      "required": ["city"]
+    }
+  },
+  {
+    "name": "Search Flights",
+    "description": "Search for flight options between two cities on a specific travel date. Use this tool when the user wants help planning a trip, comparing departures, or finding a reasonable option to book next. The tool returns candidate flights with departure time, arrival time, and price.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "origin": {
+          "type": "string",
+          "description": "Departure city, such as Beijing."
+        },
+        "destination": {
+          "type": "string",
+          "description": "Arrival city, such as Shanghai."
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "examples": ["2026-04-10"],
+          "description": "Travel date in YYYY-MM-DD format, for example 2026-04-10."
+        }
+      },
+      "required": ["origin", "destination", "date"]
+    }
+  },
+  {
+    "name": "Search Hotels",
+    "description": "Search for hotel options in a city or near a landmark. Use this tool when the user asks where to stay, especially when they care about a district, business area, or attraction. The tool returns hotel names, nightly prices, and ratings to support a quick recommendation.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string",
+          "description": "City where the user wants accommodation."
+        },
+        "district": {
+          "type": "string",
+          "description": "Preferred neighborhood, district, or landmark area, such as the Bund."
+        },
+        "check_in": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "examples": ["2026-04-10"],
+          "description": "Check-in date in YYYY-MM-DD format, for example 2026-04-10."
+        },
+        "check_out": {
+          "type": "string",
+          "format": "date",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "examples": ["2026-04-12"],
+          "description": "Check-out date in YYYY-MM-DD format, for example 2026-04-12."
+        }
+      },
+      "required": ["city", "district", "check_in", "check_out"]
+    }
+  }
+]
