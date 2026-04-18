@@ -17,6 +17,13 @@ VoxMind is an integrated framework designed to equip end-to-end spoken dialogue 
 
 ---
 
+## 🔥 News
+
+- 📄 Our paper has been accepted to **ACL 2026 Main Conference**!
+- 💻 We have open-sourced the **inference and training code**.
+- 📚 We have released the **training data**.
+- 🧠 We have made the **model weights** publicly available.
+
 ## 🔥 Highlights
 
 - 🎧 Unified `audio` / `text` input workflow
@@ -62,6 +69,7 @@ voxmind/
 ### Training data
 
 - 🤗 JSONL annotations: [`leungtianle/VoxMind-jsonl`](https://huggingface.co/datasets/leungtianle/VoxMind-jsonl)
+- 🤗 AgentChat dataset: [`leungtianle/AgentChat`](https://huggingface.co/datasets/leungtianle/AgentChat)
 - 🔷 ModelScope speech data: [`BEISHUI/AgentChat`](https://www.modelscope.cn/datasets/BEISHUI/AgentChat)
 
 These resources correspond to the released model weights, structured JSONL data, and speech-side training assets used in the VoxMind pipeline.
