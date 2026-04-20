@@ -1,10 +1,21 @@
 # 🎙️ VoxMind
+
 <p align="center">
-  <img alt="Python" src="https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white" />
-  <img alt="PyTorch" src="https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
-  <img alt="Speech Agent" src="https://img.shields.io/badge/Speech-Agent-6A5ACD?style=flat-square" />
-  <img alt="Tool Calling" src="https://img.shields.io/badge/Tool-Calling-0F9D58?style=flat-square" />
-  <img alt="Dynamic Retrieval" src="https://img.shields.io/badge/Dynamic-Retrieval-F57C00?style=flat-square" />
+  <a href="https://arxiv.org/abs/2604.15710">
+    <img alt="arXiv" src="https://img.shields.io/badge/arXiv-2604.15710-B31B1B.svg?style=flat-square&logo=arxiv&logoColor=white" />
+  </a>
+  <a href="https://huggingface.co/leungtianle/VoxMind">
+    <img alt="Model" src="https://img.shields.io/badge/🤗%20Model-VoxMind-FFD21E.svg?style=flat-square" />
+  </a>
+  <a href="https://huggingface.co/datasets/leungtianle/AgentChat">
+    <img alt="Dataset: AgentChat" src="https://img.shields.io/badge/🤗%20Dataset-AgentChat-FFD21E.svg?style=flat-square" />
+  </a>
+  <a href="https://huggingface.co/datasets/leungtianle/VoxMind-jsonl">
+    <img alt="Dataset: VoxMind-jsonl" src="https://img.shields.io/badge/🤗%20Dataset-jsonl-FFD21E.svg?style=flat-square" />
+  </a>
+  <a href="https://www.modelscope.cn/datasets/BEISHUI/AgentChat">
+    <img alt="ModelScope" src="https://img.shields.io/badge/ModelScope-Dataset-1F8CEB.svg?style=flat-square" />
+  </a>
 </p>
 
 ---
@@ -23,6 +34,7 @@ VoxMind is an integrated framework designed to equip end-to-end spoken dialogue 
 - 💻 We have open-sourced the **inference and training code**.
 - 📚 We have released the **training data**.
 - 🧠 We have made the **model weights** publicly available.
+- 📄 **Our preprint is now available on [arXiv](https://arxiv.org/abs/2604.15710).** 
 
 ## 🔥 Highlights
 
@@ -331,7 +343,15 @@ print(model.parse_tool_calls(response.answer))
 
 If this repository or its workflow design is helpful to your research, please cite or reference it appropriately.
 
-<!-- ```bibtex
-
-``` -->
+```bibtex
+@misc{liang2026voxmindendtoendagenticspoken,
+      title={VoxMind: An End-to-End Agentic Spoken Dialogue System}, 
+      author={Tianle Liang and Yifu Chen and Shengpeng Ji and Yijun Chen and Zhiyang Jia and Jingyu Lu and Fan Zhuo and Xueyi Pu and Yangzhuo Li and Zhou Zhao},
+      year={2026},
+      eprint={2604.15710},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD},
+      url={https://arxiv.org/abs/2604.15710}, 
+}
+``` 
 
