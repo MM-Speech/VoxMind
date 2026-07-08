@@ -16,6 +16,9 @@
   <a href="https://www.modelscope.cn/datasets/BEISHUI/AgentChat">
     <img alt="ModelScope" src="https://img.shields.io/badge/ModelScope-Dataset-1F8CEB.svg?style=flat-square" />
   </a>
+  <a href="https://huggingface.co/datasets/leungtianle/AgentChat-Test">
+    <img alt="Dataset: AgentChat-Test" src="https://img.shields.io/badge/🤗%20Dataset-AgentChatTest-FFD21E.svg?style=flat-square" />
+  </a>
 </p>
 
 ---
